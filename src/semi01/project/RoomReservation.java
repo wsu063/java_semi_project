@@ -68,7 +68,7 @@ public class RoomReservation {
     }
     //룸 예약 정보
     public void showRoomInfo() {
-        System.out.println(this.roomName + "\t" + this.date + "\t");
+        System.out.println(this.customerName + "님의 예약 내용: " + this.roomName + "\t" + this.date + "일\t");
     }
     public void showInfo() {
         System.out.println(this.roomName + "\t" + this.price + "만원\t" + this.personLimit + "명");
