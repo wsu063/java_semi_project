@@ -71,7 +71,7 @@ public class RoomReservation {
         System.out.println(this.roomName + "\t" + this.date + "\t");
     }
     public void showInfo() {
-        System.out.println(this.roomName + "\t" + this.price + "\t" + this.personLimit + "\t");
+        System.out.println(this.roomName + "\t" + this.price + "만원\t" + this.personLimit + "명");
     }
 
 }

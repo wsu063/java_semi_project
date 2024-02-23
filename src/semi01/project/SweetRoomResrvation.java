@@ -27,12 +27,12 @@ public class SweetRoomResrvation extends RoomReservation{
 
     @Override
     public void showRoomInfo() {
-        System.out.println(this.roomName + "\t" + this.date + "\t" + "조식무료제공: " + this.breakFastFree);
+        System.out.println(this.roomName + "\t" + this.date + "일\t" + "조식무료제공: " + this.breakFastFree);
     }
 
     @Override
     public void showInfo() {
-        System.out.println(this.roomName + "\t" + this.price + "\t" + "조식무료제공: " + this.breakFastFree);
+        System.out.println(this.roomName + "\t" + this.price + "만원\t" + "조식무료제공: " + this.breakFastFree);
 
     }
 }

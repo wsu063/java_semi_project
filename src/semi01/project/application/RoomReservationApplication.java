@@ -15,17 +15,17 @@ public class RoomReservationApplication {
     public static void main(String[] args) {
         boolean run = true;
         while (run) {
-            int select;
+            String select;
             System.out.println("===호텔 예약 프로그램을 시작합니다.===");
             System.out.println("1. 예약 | 2. 모든 룸의 정보 보기 | 3. 모든 고객의 예약 정보 보기 | " +
                     "4. 특정 고객의 예약 정보 보기 | 5. 프로그램 종료");
             System.out.print("선택 > ");
-            select = scanner.nextInt();
+            select = scanner.next();
             switch (select) {
-                case 1: startReservation(); break;
-                case 2: showAllRoom(); break;
-                case 3: showAllReservation(); break;
-                case 4:
+                case "1": startReservation(); break;
+                case "2": showAllRoom(); break;
+                case "3": showAllReservation(); break;
+                case "4":
                     System.out.println("예약자명을 입력해주세요.");
                     System.out.print("예약자명: ");
                     String name = scanner.next();
@@ -37,13 +37,11 @@ public class RoomReservationApplication {
                         findName.showRoomInfo();
                         break;
                     }
-                case 5: run = false; break;
+                case "5": run = false; break;
                 default:
                     System.out.println("잘못된 입력입니다. 다시 입력해주십시오.");
                     break;
             }
-
-
         }
         System.out.println("프로그램 종료");
     }
@@ -58,6 +56,7 @@ public class RoomReservationApplication {
         }
         return result;
     }
+    //예약 후 지불해야할 금액 및 예약 내역을 보여주는 메소드
     public static void showMoney(RoomReservation roomReservation) {
         System.out.print("예약 후 지불해야할 금액: ");
         int price = roomReservation.calcPrice(roomReservation.getDate());
@@ -69,6 +68,11 @@ public class RoomReservationApplication {
     public static void startReservation() {
         System.out.print("예약자명: ");
         String customerName = scanner.next();
+        RoomReservation findName = findReservation(customerName);
+        if(findName != null) {
+            System.out.println("이미 예약되어있습니다.");
+            return;
+        }
         System.out.print("예약 일수: ");
         int date = scanner.nextInt();
         System.out.print("예약할 룸: ");
