@@ -65,6 +65,7 @@ public class RoomReservationApplication {
         roomReservation.showRoomInfo();
     }
 
+    // 예약하기
     public static void startReservation() {
         System.out.print("예약자명: ");
         String customerName = scanner.next();
@@ -108,6 +109,7 @@ public class RoomReservationApplication {
 
     }
 
+    //예약하는 방 종류 및 상세
     public static void showAllRoom() {
         RoomReservation room = new RoomReservation();
         room.showInfo();
@@ -118,6 +120,7 @@ public class RoomReservationApplication {
         room = new SweetRoomResrvation();
         room.showInfo();
     }
+    // 모든 고객의 예약 정보 보기
     public static void showAllReservation() {
         for(RoomReservation room: reservationList) {
             room.showRoomInfo();

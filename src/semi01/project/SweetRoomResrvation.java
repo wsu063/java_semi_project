@@ -22,7 +22,11 @@ public class SweetRoomResrvation extends RoomReservation{
 
     @Override
     public int calcPrice(int date) {
-        return date*this.price - (int)(date*this.price*this.saleRatio);
+        if(date >= 3) {
+            return date*this.price - (int)(date*this.price*this.saleRatio);
+        } else {
+            return date*this.price;
+        }
     }
 
     @Override
