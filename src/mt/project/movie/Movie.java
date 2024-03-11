@@ -14,10 +14,6 @@ public class Movie {
         this.movieName = movieName;
         this.movieId = movieId;
     }
-    public void register(Theater theater) {
-        //영화를 영화관에 등록
-        theaterList.add(theater);
-    }
     public double showRate(Movie movie) {
         int sum = 0;
         for (Rate rate: rateList) {
@@ -26,6 +22,10 @@ public class Movie {
         double avg = (double)sum / rateList.size();
         return avg;
     }
+    public void rate(Rate rate) {
+        rateList.add(rate);
+    }
+    public void addUser(User user) {userList.add(user);}
 
     public String getMovieName() {
         return movieName;

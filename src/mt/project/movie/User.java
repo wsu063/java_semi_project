@@ -22,11 +22,12 @@ public class User {
         rateList.add(rate);
     }
 
-    public void watchRate(Movie movie, int point) {// 영화시청 + 평가
-        watch(movie);
+    public void watchRate(Movie movie, int point, User user) {// 영화시청 + 평가
+        watch(movie); // 해당 유저가 해당 영화를 시청
         Rate rate = new Rate(this.userId, movie, point);
-        rate(rate);
-
+        rate(rate); // 해당 유저가 해당 영화에 점수를 매김
+        movie.rate(rate); // 해당 영화에 점수를 저장함
+        movie.addUser(user);
     }
 
     public String getUserName() {

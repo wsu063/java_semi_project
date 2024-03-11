@@ -38,4 +38,26 @@ public class Db {
         return userList;
     }
 
+    public User findUser(int userId) {
+        User result = null;
+        for(User user : userList) {
+            if(user.getUserId() == userId){
+                result = user;
+                break;
+            }
+        }
+        return result;
+    }
+
+    public Movie findMovie(int movieId) {
+        Movie result = null;
+        for(Movie movie : movieList) {
+            if(movie.getMovieId() == movieId){
+                result = movie;
+                break;
+            }
+        }
+        return result;
+    }
+
 }
